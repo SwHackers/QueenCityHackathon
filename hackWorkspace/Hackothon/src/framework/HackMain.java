@@ -13,7 +13,9 @@ public class HackMain
 		
 		PMath.normalize(er.getData());
 		
-		printData(er);
+		MLModel m = new MLModel(er.getData());
+		
+		//printData(er);
 		
 		System.out.println("Terminated");
 	}

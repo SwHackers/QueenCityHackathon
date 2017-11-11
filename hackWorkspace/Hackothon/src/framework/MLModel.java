@@ -18,6 +18,13 @@ import net.sf.javaml.core.Instance;
 
 public class MLModel
 {	
+	
+	
+	boolean Comp(double a, double b)
+	{
+		return (a < b);
+	}
+	
 	public MLModel(double[][] data)
 	{		
 		double[][] columns = new double[15][100];
@@ -41,22 +48,11 @@ public class MLModel
 			
 			Classifier knn = new KNearestNeighbors(5);
 			knn.buildClassifier(set);
-			
-			int correct = 0, wrong = 0;
-			
-		    Object predictedClassValue = knn.classify(instance);
-		    Object realClassValue = instance.classValue();
-		    if (predictedClassValue.equals(realClassValue))
-		        correct++;
-		    else
-		        wrong++;
-			
-			System.out.println(correct);
-			
-//			for (int i = 0; i < columns[c].length; i++)
-//			{
-//				set.add(i, instance);
-//			}
+
+			for(int i = 0; i < columns[c].length; i++)
+			{
+				set.add(i, instance);
+			}
 //			
 //			Clusterer km = new KMeans(1);
 //			

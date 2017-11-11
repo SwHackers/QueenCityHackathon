@@ -15,7 +15,7 @@ public class ExcelReader
 	
 	Entry[] entries;
 	
-	private static final int debugRows = 100;
+	private static final int debugRows = 60000;
 	
 	private double[][] data;// = new double[100][15];	//Rows with columns of data
 	
@@ -52,7 +52,7 @@ public class ExcelReader
 			row = sheet.getRow(1);
 			entries[1] = new Entry(fe, row, validSpots, true);
 			
-			for (int i = 0; i < debugRows - 1; i++)	//TODO this should be numOfRows
+			for (int i = 0; i < debugRows; i++)	//TODO this should be numOfRows
 			{
 				ii = i;
 				row = sheet.getRow(i + 1);
@@ -66,6 +66,15 @@ public class ExcelReader
 			System.out.println("@ExcelReader: error, getting rows didn't work; ii = " + ii);
 			e.printStackTrace();
 		}
+		
+//		for (int r = 0; r < debugRows; r++)
+//		{
+//			for (int c = 0; c < data[r].length; c++)
+//			{
+//				System.out.print(data[r][c] + ", ");
+//			}
+//			System.out.println();
+//		}
 	}
 	
 	public double[][] getData() { return this.data; }

@@ -13,6 +13,8 @@ public class PMath
 		
 		result = min2 + frac*range2;
 		
+//		System.out.println("v, m1, m1, m2, m2 = " + value + " " + min1 + " " + max1 + " " + min2 + " " + max2 + " " + result);
+		
 		return result;
 	}
 	

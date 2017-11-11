@@ -61,7 +61,7 @@ public class Entry
 			
 			rawData = new Datum[maxCols];
 			
-			System.out.println("Length = " + maxCols);
+//			System.out.println("Length = " + maxCols);
 			
 			for(int i = 0; i < maxCols; i++)
 			{

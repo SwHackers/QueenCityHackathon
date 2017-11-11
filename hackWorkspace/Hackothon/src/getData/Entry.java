@@ -1,38 +1,36 @@
 package getData;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 
 public class Entry
 {
 	//This is for traffic data
-	String[] columns = new String[66];
-	private static int numOfRows;
+//	String[] rawData;
+	double[] rawDataD;
+	Datum[] rawData;
 	
-	public Entry(int rowIndex, HSSFSheet sheet)
+	public Entry(HSSFRow row)
 	{
-		File trafficBook = new File("resource/traffic.csv");
-		
 		try
 		{
-			HSSFRow			row = sheet.getRow(rowIndex);
-			HSSFCell		cell;
+			HSSFCell cell;
 			
-			int rows = sheet.getPhysicalNumberOfRows();
+			int maxCols = row.getPhysicalNumberOfCells();
 			
+			//rawData = new String[maxCols];
+			rawData = new Datum[maxCols];
+			
+//			for(int i = 0; i <= maxCols; i++)
+//			{
+//				cell = row.getCell(i);
+//				rawData[i] = new Datum(cell);
+//			}
 			
 		}
 		catch (Exception e)
 		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("@Entry: error getting cell data");
 		}
 	}
 }

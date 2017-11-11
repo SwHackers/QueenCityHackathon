@@ -1,0 +1,36 @@
+DATA SCIENCE
+
+What are tools?
+	R, python, sckola, stada
+		Good for building models
+		Internal pacages that are good for using matrices and stuff
+	Problem solving steps
+		Getting your data
+			Cleaning and stuff
+			Put text data into something usefull
+			Bag of words
+			Bigrams trigrams
+				groupings of words (dog ran could be a value you need)
+			Use multiple datasets to find a pattern
+				Ex. Tweets and Crime could be linked
+		Exploratory data analysis
+			Understand whats going on underneath the hood
+			Use a chart or graph to see whats happening
+		Feature selection and creation
+			Turn complicated data into simple data
+			Trim the crap
+		Model
+			Classification model
+				Logistic regresion
+			Continuous model
+				Linear regresion
+			Try machine learning techniques
+				Different stuff like neural networks
+		Put inntoo a usefull position
+			Turn model into some kinda predictor app
+				Web site that takes input, makes an output or visualization
+			Visualization tool
+				Data set can give you insite to make a policy desicion
+				Easy to interaction
+			Communication tool
+				Get "investors" and other people interested

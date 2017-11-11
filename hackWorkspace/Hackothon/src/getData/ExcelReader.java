@@ -7,6 +7,7 @@ import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.poifs.filesystem.POIFSFileSystem;
+import org.apache.poi.ss.usermodel.FormulaEvaluator;
 
 public class ExcelReader
 {
@@ -29,13 +30,15 @@ public class ExcelReader
 			
 			HSSFRow			row = sheet.getRow(0);
 			
+			FormulaEvaluator fe = wb.getCreationHelper().createFormulaEvaluator();
+			
 			numOfRows = sheet.getPhysicalNumberOfRows();
 			entries = new Entry[numOfRows];
 			
-			for (int i = 0; i < numOfRows; i++)
+			for (int i = 1; i < 100; i++)	//TODO this should be numOfRows
 			{
 				row = sheet.getRow(i);
-				entries[i] = new Entry(row);
+				entries[i] = new Entry(fe, row);
 			}
 			
 			wb.close();

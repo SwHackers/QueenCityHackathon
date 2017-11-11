@@ -39,11 +39,14 @@ public class Panel extends JPanel
 			int x = (int)PMath.map(xD, -1, 1, 0, w);
 			int y = (int)(h - PMath.map(yD, -1, 1, 0, h));
 			
-			double cl = data[r][14];
+			double cl = data[r][4];
 			int c = (int)PMath.map(cl, -1, 1, 0, 255);
 			
-//			g2.setColor(calcColor(c));
-			g2.setColor(new Color(c, c, 255-c, 128));
+			int red = (int) (255-c + c*0.1);
+			int gre = (int) (255-c + c*0.1);
+			int blu = c;
+			
+			g2.setColor(new Color(red, gre, blu));
 			
 			g2.fillRect((int)x, (int)y, 1, 1);
 		}

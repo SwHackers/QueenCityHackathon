@@ -14,24 +14,22 @@ public class Entry
 {
 	//This is for traffic data
 	String[] columns = new String[66];
+	private static int numOfRows;
 	
-	public Entry()
+	public Entry(int rowIndex, HSSFSheet sheet)
 	{
 		File trafficBook = new File("resource/traffic.csv");
 		
 		try
 		{
-			POIFSFileSystem fs = new POIFSFileSystem(new FileInputStream(trafficBook));
-			HSSFWorkbook wb = new HSSFWorkbook(fs);
-			HSSFSheet sheet = wb.getSheetAt(0);
-			HSSFRow row;
-			HSSFCell cell;
+			HSSFRow			row = sheet.getRow(rowIndex);
+			HSSFCell		cell;
 			
 			int rows = sheet.getPhysicalNumberOfRows();
 			
 			
 		}
-		catch (IOException e)
+		catch (Exception e)
 		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();

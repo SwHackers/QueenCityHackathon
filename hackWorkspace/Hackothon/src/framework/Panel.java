@@ -52,6 +52,7 @@ public class Panel extends JPanel
 		}
 	}
 	
+	@SuppressWarnings("unused")
 	private Color calcColor(int c)
 	{
 		Color color;

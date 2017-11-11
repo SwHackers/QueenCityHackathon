@@ -9,6 +9,9 @@ public class Datum
 	String string;
 	double number;
 	boolean blank = false;
+	boolean bool;
+	
+	public static int holeCount;
 	
 	public Datum(FormulaEvaluator fe, HSSFCell cell)
 	{
@@ -18,10 +21,11 @@ public class Datum
 			
 			switch (ct)
 			{
-				case BLANK:		blank = true;	break;
-				case NUMERIC:	number = cell.getNumericCellValue();	break;
-				case STRING:	string = cell.getStringCellValue();		break;
-				default:		blank = true;	break;
+				case BLANK:		blank	= true; holeCount++;			break;
+				case NUMERIC:	number	= cell.getNumericCellValue();	break;
+				case STRING:	string	= cell.getStringCellValue();	break;
+				case BOOLEAN:	bool	= cell.getBooleanCellValue();	break;
+				default:		blank	= true; holeCount++;			break;
 			}
 		}
 		catch(Exception e)

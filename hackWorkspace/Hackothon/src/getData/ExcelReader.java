@@ -17,7 +17,7 @@ public class ExcelReader
 	
 	public ExcelReader()
 	{
-		File trafficBook = new File("resource/traffic_3.xls");
+		File trafficBook = new File("resource/Cleaned_Traffic_Data_2.xls");
 		
 		if (!trafficBook.exists())
 			System.out.println("File does not exist");

@@ -39,7 +39,7 @@ public class Panel extends JPanel
 			int x = (int)PMath.map(xD, -1, 1, 0, w);
 			int y = (int)(h - PMath.map(yD, -1, 1, 0, h));
 			
-			double cl = data[r][4];
+			double cl = data[r][14];
 			int c = (int)PMath.map(cl, -1, 1, 0, 255);
 			
 			int red = (int) (255-c + c*0.1);
